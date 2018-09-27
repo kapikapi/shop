@@ -1,7 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand col-10" href="#">Super Shop</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand col-2">Cart</a>
+    <a class="navbar-brand col-10" href="#">Super Shop</a>
+
+    <button type="button" class="btn btn-primary btn-light col-2" (click)="cartVisible=!cartVisible">
+        Cart
+        <!--TODO: fix changed after error-->
+        <!--<span class="badge badge-light">{{cartCount}}</span>-->
+    </button>
 </nav>
+<div class="container">
+    <div class="row">
+        <product-list (updateCartCount)="onCartUpdate()" [ngClass]="{'col-8': cartVisible}"></product-list>
+        <cart-list (totalNumberChanged)="onCartUpdate($event)" [hidden]="!cartVisible" class="col-4"></cart-list>
+    </div>
+</div>
+

@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="card card-container">
+    <div class="card-body">
+        <div class="informaition">
+            <h5 class="card-title inline-title col-8">{{productItem.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Price: {{productItem.price}}</h6>
+            <p class="card-text" *ngIf="productItem.additionalInformation">{{productItem.additionalInformation}}</p>
+            <p class="card-text" *ngIf="!productItem.isAvailable">Not available</p>
+        </div>
+        <button type="button" class="btn btn-dark add-button col-4"
+                [ngClass]="{'disabled': !productItem.isAvailable}"
+                (click)="notifyParent(productItem)">Add to cart
+        </button>
+    </div>
+</div>

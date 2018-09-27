@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="row">
+    <div class="col-5">{{cartItem.product.name}}</div>
+    <div class="col-4">
+        <div class="form-group row">
+            <div class="col-10">
+                <input class="form-control" type="number" (change)="notifyParent()"
+                       [(ngModel)]="cartItem.quantity" id="number-input" min="0" max="6">
+            </div>
+        </div>
+    </div>
+    <div class="col-3">{{cartItem.product.price * cartItem.quantity}}</div>
+
+</div>

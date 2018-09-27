@@ -1,3 +1,5 @@
-/**
- * Created by Elizaveta_Kapitonova on 9/27/2018.
- */
+import {Product} from '../../products/product/product.interface';
+export interface Cart {
+    product: Product;
+    quantity: number;
+}

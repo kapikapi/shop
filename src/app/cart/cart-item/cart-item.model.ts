@@ -1,3 +1,8 @@
-/**
- * Created by Elizaveta_Kapitonova on 9/26/2018.
- */
+import {Cart} from './cart-item.interface';
+import {Product} from '../../products/product/product.interface';
+export class CartItem implements Cart {
+
+    constructor(public product: Product, public quantity: number) {
+    }
+
+}

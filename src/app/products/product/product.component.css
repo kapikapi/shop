@@ -1,0 +1,13 @@
+.add-button {
+    position: absolute;
+    bottom: 10px;
+    min-width: 120px;
+}
+
+.informaition {
+    margin-bottom: 40px;
+}
+
+.card-container {
+    min-height: 200px;
+}

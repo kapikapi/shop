@@ -1,3 +1,6 @@
-/**
- * Created by Elizaveta_Kapitonova on 9/27/2018.
- */
+export interface Product {
+    name: string;
+    price: number;
+    isAvailable: boolean;
+    additionalInformation?: string;
+}
