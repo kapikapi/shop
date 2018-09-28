@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CartProductCommunicatorService} from '../common/cart-product-communicator.service';
 import {List} from 'immutable';
 import {CartService} from './cart.service';
@@ -24,12 +24,15 @@ export class CartComponent implements OnInit {
     }
 
     ngOnInit() {
-        const that = this;
         this.sub = this.communicatorService.channel$.subscribe((product: Product) => {
             const index = this.cartItemsList.findIndex((item) => item.product.name === product.name);
             if (index > -1) {
                 this.cartItemsList = this.cartItemsList.update(index, (value: Cart) => {
-                    return new CartItem(product, value.quantity + 1);
+                    if (value.quantity < 6) {
+                        return new CartItem(product, value.quantity + 1);
+                    } else {
+                        return value;
+                    }
                 });
             } else {
                 this.cartItemsList = this.cartItemsList.push(new CartItem(product, 1));
@@ -38,7 +41,7 @@ export class CartComponent implements OnInit {
         });
     }
 
-    onQuantityChanged(changedItem: Cart): void {
+    onQuantityChanged(): void {
         this.totalPrice = this.cartService.calculateSum(this.cartItemsList);
         this.totalNumberChanged.emit(this.cartService.calculateTotalNumber(this.cartItemsList));
     }

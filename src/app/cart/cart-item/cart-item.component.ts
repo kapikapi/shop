@@ -5,6 +5,7 @@ import {Cart} from './cart-item.interface';
 @Component({
     selector: 'cart-item',
     templateUrl: './cart-item.component.html',
+    styleUrls: ['./cart-item.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartItemComponent {

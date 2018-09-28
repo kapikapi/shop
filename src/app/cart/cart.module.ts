@@ -1,9 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 import {CartItemComponent} from './cart-item/cart-item.component';
 import {CartComponent} from './cart.component';
+import {SharedModule} from '../common/shared/shared.module';
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import {CartComponent} from './cart.component';
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        SharedModule
     ],
     exports: [CartComponent],
     providers: []

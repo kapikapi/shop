@@ -14,8 +14,6 @@ import {CartProductCommunicatorService} from './common/cart-product-communicator
     ],
     imports: [
         BrowserModule,
-        FormsModule,
-        HttpModule,
         ProductsModule,
         CartModule
     ],
