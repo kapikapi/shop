@@ -1,23 +1,25 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {ProductsModule} from './products/products.module';
 import {CartModule} from './cart/cart.module';
-import {CartProductCommunicatorService} from './common/cart-product-communicator.service';
+import {CartService} from './cart/cart.service';
+import {CoreModule} from './common/core/core.module';
+import {ContactUsComponent} from './contact-us/contact-us.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        ContactUsComponent
     ],
     imports: [
         BrowserModule,
         ProductsModule,
-        CartModule
+        CartModule,
+        CoreModule
     ],
-    providers: [CartProductCommunicatorService],
+    providers: [CartService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

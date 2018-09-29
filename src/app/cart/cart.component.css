@@ -5,3 +5,7 @@
 .cart-headings {
     margin-bottom: 10px;
 }
+
+.cart-container {
+    min-width: 450px;
+}

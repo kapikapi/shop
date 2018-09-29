@@ -1,3 +1,13 @@
 .cart-item-container {
     padding-top: 10px;
 }
+
+.price {
+    padding-top: 5px;
+}
+
+.remove {
+    font-size: 11px;
+    padding-top: 10px;
+    color: black;
+}

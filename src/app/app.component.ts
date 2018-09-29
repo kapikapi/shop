@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {CartService} from './cart/cart.service';
 
 @Component({
     selector: 'app-root',
@@ -12,15 +13,13 @@ export class AppComponent implements AfterViewInit {
     cartCount = 0;
     cartVisible = false;
 
+    constructor(private cartService: CartService) {}
+
     ngAfterViewInit() {
         this.title.nativeElement.text = 'Super Shop';
     }
 
-    onCartUpdate(newTotalNumber?: number): void {
-        if (newTotalNumber) {
-            this.cartCount = newTotalNumber;
-        } else {
-            this.cartCount++;
-        }
+    onCartUpdate(): void {
+        this.cartCount = this.cartService.getTotalNumber();
     }
 }

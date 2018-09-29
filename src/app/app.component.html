@@ -9,7 +9,8 @@
 <div class="container">
     <div class="row">
         <product-list (updateCartCount)="onCartUpdate()" [ngClass]="{'col-8': cartVisible}"></product-list>
-        <cart-list (totalNumberChanged)="onCartUpdate($event)" [hidden]="!cartVisible" class="col-4"></cart-list>
+        <cart-list (totalNumberChanged)="onCartUpdate()" [hidden]="!cartVisible" class="col-4"></cart-list>
     </div>
 </div>
+<contact-us></contact-us>
 

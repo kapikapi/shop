@@ -24,6 +24,6 @@ export class ProductListComponent implements OnInit {
     onAddToCart(product: Product): void {
         // attempt to communicate with siblings
         this.communicatorService.publishData(product);
-        this.updateCartCount.emit();
+        // this.updateCartCount.emit();
     }
 }

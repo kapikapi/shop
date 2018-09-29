@@ -10,9 +10,14 @@ import {Cart} from './cart-item.interface';
 })
 export class CartItemComponent {
     @Input() cartItem: Cart;
-    @Output() quantityChanged: EventEmitter<Cart> = new EventEmitter<Cart>();
+    @Output() quantityChanged: EventEmitter<any> = new EventEmitter<any>();
+    @Output() itemRemoved: EventEmitter<Cart> = new EventEmitter<Cart>();
 
     notifyParent(): void {
-        this.quantityChanged.emit(this.cartItem);
+        this.quantityChanged.emit();
+    }
+
+    removeItem(): void {
+        this.itemRemoved.emit(this.cartItem);
     }
 }

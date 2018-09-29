@@ -1,5 +1,5 @@
-<div class="row cart-item-container" appHighlight>
-    <div class="col-5">{{cartItem.product.name}}</div>
+<div class="row cart-item-container" appHighlight appBorder="1px solid black">
+    <div class="col-3">{{cartItem.product.name}}</div>
     <div class="col-4">
         <div class="form-group row">
             <div class="col-10">
@@ -8,6 +8,9 @@
             </div>
         </div>
     </div>
-    <div class="col-3">{{cartItem.product.price * cartItem.quantity}}</div>
+    <div class="col-2 price">{{cartItem.product.price * cartItem.quantity}}</div>
+    <div class="col-3">
+        <a class="nav-link remove" href="#" (click)="removeItem()">Remove</a>
+    </div>
 
 </div>
