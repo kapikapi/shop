@@ -12,15 +12,18 @@ export class CartComponent implements OnInit {
     @Output() totalNumberChanged: EventEmitter<number> = new EventEmitter<number>();
     cartItemsList: List<Cart>;
     totalPrice = 0;
+    sortingFields = ['price', 'name', 'quantity'];
+    selectedSortingField: string;
+    isSortingAsc = false;
 
     constructor(private cartService: CartService) {
     }
 
     ngOnInit() {
+        this.selectedSortingField = this.sortingFields[0];
         this.cartService.cartItemList.subscribe(list => {
             this.cartItemsList = list;
-            this.totalPrice = this.cartService.updateSum(list);
-            this.cartService.updateTotalNumber(list);
+            this.totalPrice = this.cartService.getTotalPrice();
             this.totalNumberChanged.emit();
         });
     }

@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {ProductListComponent} from './product-list.component';
 import {ProductsService} from './products.service';
 import {ProductComponent} from './product/product.component';
+import {SharedModule} from '../common/shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import {ProductComponent} from './product/product.component';
     imports: [
         BrowserModule,
         FormsModule,
+        SharedModule
     ],
     providers: [ProductsService]
 })

@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {List} from 'immutable';
+import {List, Map} from 'immutable';
 import {ProductsService} from './products.service';
 import {CartProductCommunicatorService} from '../common/cart-product-communicator.service';
 import {Product} from './product/product.interface';
@@ -12,7 +12,7 @@ import {Product} from './product/product.interface';
 })
 export class ProductListComponent implements OnInit {
     @Output() updateCartCount: EventEmitter<any> = new EventEmitter<any>();
-    productsList: List<Product>;
+    productsList: Promise<List<Product>>;
 
     constructor(private productsService: ProductsService,
                 private communicatorService: CartProductCommunicatorService) {}
@@ -24,6 +24,6 @@ export class ProductListComponent implements OnInit {
     onAddToCart(product: Product): void {
         // attempt to communicate with siblings
         this.communicatorService.publishData(product);
-        // this.updateCartCount.emit();
+        this.updateCartCount.emit();
     }
 }

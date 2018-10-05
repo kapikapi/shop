@@ -2,13 +2,23 @@
     <h5 class="card-header">Your cart</h5>
     <div class="card-body">
         <div class="cart-list container" *ngIf="cartItemsList.size > 0">
+            <div class="sorting-block">
+                Sort by:
+                <select class="form-control sort-select" id="sorting"
+                        [(ngModel)]="selectedSortingField">
+                    <option *ngFor="let field of sortingFields" [value]="field">{{field | titlecase}}</option>
+                </select>
+                <input type="checkbox" class="sort-checkbox" [checked]="isSortingAsc"
+                       (change)="isSortingAsc = !isSortingAsc"/> Ascending order
+            </div>
             <div class="row cart-headings">
                 <h6 class="card-subtitle mb-2 col-3">Name</h6>
                 <h6 class="card-subtitle mb-2 col-4">Quantity</h6>
                 <h6 class="card-subtitle mb-2 col-2">Price</h6>
             </div>
-            <div *ngFor="let item of cartItemsList">
-                <cart-item [cartItem]="item" (itemRemoved)="onItemRemoved($event)" (quantityChanged)="onQuantityChanged()"></cart-item>
+            <div *ngFor="let item of cartItemsList | orderByField:selectedSortingField:isSortingAsc">
+                <cart-item [cartItem]="item" (itemRemoved)="onItemRemoved($event)"
+                           (quantityChanged)="onQuantityChanged()"></cart-item>
             </div>
             <h6 class="card-subtitle mb-2 margin-top-15">Total price: {{totalPrice}}</h6>
         </div>

@@ -14,6 +14,7 @@ export class CartItemComponent {
     @Output() itemRemoved: EventEmitter<Cart> = new EventEmitter<Cart>();
 
     notifyParent(): void {
+        this.cartItem.price = this.cartItem.product.price * this.cartItem.quantity;
         this.quantityChanged.emit();
     }
 

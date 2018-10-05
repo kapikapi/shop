@@ -18,10 +18,18 @@ export class CartService {
         this.sub = this.communicatorService.channel$.subscribe((product: Product) => {
             this.addToCart(product);
         });
+        this.cartItemList.subscribe(list => {
+            this.updateSum(list);
+            this.updateTotalNumber(list);
+        });
     }
 
     getTotalNumber(): number {
         return this.totalNumber;
+    }
+
+    getTotalPrice(): number {
+        return this.totalPrice;
     }
 
     addToCart(product: Product): void {

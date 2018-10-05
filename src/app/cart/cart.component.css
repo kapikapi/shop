@@ -9,3 +9,18 @@
 .cart-container {
     min-width: 450px;
 }
+
+.sort-select {
+    width: 30%;
+    display: inline;
+}
+
+.sorting-block {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.sort-checkbox {
+    display: inline;
+    margin-left: 10px;
+}
