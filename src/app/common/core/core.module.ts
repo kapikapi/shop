@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {LocalStorageService} from './local-storage.service';
 import {CartProductCommunicatorService} from '../cart-product-communicator.service';
 import {ConfigOptionsService} from './config.options';
-import {APP_CONST, appConstant} from './constants.service';
+import {ConstProvider} from './constants.service';
 import {GeneratorFactory, GeneratorService} from './generator.service';
 
 @NgModule({
@@ -14,7 +14,7 @@ import {GeneratorFactory, GeneratorService} from './generator.service';
         CartProductCommunicatorService,
         LocalStorageService,
         ConfigOptionsService,
-        {provide: APP_CONST, useValue: appConstant},
+        ConstProvider,
         {provide: GeneratorService, useFactory: GeneratorFactory(7)}
     ]
 })

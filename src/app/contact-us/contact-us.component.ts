@@ -2,7 +2,7 @@ import {Component, Inject, OnInit, Optional} from '@angular/core';
 import {LocalStorageService} from '../common/core/local-storage.service';
 import {ConfigOptionsService} from '../common/core/config.options';
 import {GeneratorService} from '../common/core/generator.service';
-import {APP_CONST, appConstant} from '../common/core/constants.service';
+import {APP_CONST} from '../common/core/constants.service';
 @Component({
     selector: 'contact-us',
     templateUrl: './contact-us.component.html'
