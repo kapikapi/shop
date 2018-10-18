@@ -2,10 +2,10 @@ import {Product} from './product.interface';
 
 export class ProductItem implements Product {
 
-    constructor(public name: string,
-                public price: number,
-                public isAvailable: boolean,
-                public additionalInformation?: string) {
-        this.additionalInformation = additionalInformation || null;
+    constructor(public name = null,
+                public price = 0,
+                public isAvailable = false,
+                public additionalInformation = null,
+                public feedback = null) {
     }
 }

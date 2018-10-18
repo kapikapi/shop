@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand col-10" href="#" #appTitle></a>
+    <a class="navbar-brand col-10" routerLink="/home" #appTitle></a>
 
     <button type="button" class="btn btn-primary btn-light col-2" (click)="cartVisible=!cartVisible">
         Cart
@@ -13,4 +13,6 @@
     </div>
 </div>
 <contact-us></contact-us>
+<router-outlet></router-outlet>
+
 

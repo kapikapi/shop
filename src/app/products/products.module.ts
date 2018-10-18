@@ -5,17 +5,21 @@ import {ProductListComponent} from './product-list.component';
 import {ProductsService} from './products.service';
 import {ProductComponent} from './product/product.component';
 import {SharedModule} from '../common/shared/shared.module';
+import {ProductsRoutingModule} from './products-routing.module';
+import {ProductDetailsComponent} from './product-details/product-details.component';
 
 @NgModule({
     declarations: [
         ProductListComponent,
-        ProductComponent
+        ProductComponent,
+        ProductDetailsComponent
     ],
     exports: [ProductListComponent],
     imports: [
         BrowserModule,
         FormsModule,
-        SharedModule
+        SharedModule,
+        ProductsRoutingModule
     ],
     providers: [ProductsService]
 })

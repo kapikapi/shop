@@ -7,17 +7,21 @@ import {CartModule} from './cart/cart.module';
 import {CartService} from './cart/cart.service';
 import {CoreModule} from './common/core/core.module';
 import {ContactUsComponent} from './contact-us/contact-us.component';
+import {AppRoutingModule} from './app-routing.module';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ContactUsComponent
+        ContactUsComponent,
+        PageNotFoundComponent
     ],
     imports: [
         BrowserModule,
         ProductsModule,
         CartModule,
-        CoreModule
+        CoreModule,
+        AppRoutingModule
     ],
     providers: [CartService],
     bootstrap: [AppComponent]

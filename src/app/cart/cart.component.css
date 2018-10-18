@@ -24,3 +24,17 @@
     display: inline;
     margin-left: 10px;
 }
+
+.subtitle {
+    margin-top: 15px;
+    display: inline;
+}
+
+.cart-submit {
+    float: right;
+}
+
+.cart-list {
+    padding: 15px 7px;
+    margin-bottom: 30px;
+}

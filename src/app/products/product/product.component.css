@@ -11,3 +11,7 @@
 .card-container {
     min-height: 200px;
 }
+
+.feedback-link {
+    cursor: pointer;
+}

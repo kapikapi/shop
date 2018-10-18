@@ -1,0 +1,13 @@
+.add-button {
+    min-width: 120px;
+}
+
+.informaition {
+    margin-bottom: 40px;
+}
+
+.card-container {
+    width: 70%;
+    margin: 15px auto;
+    background-color: rgba(0, 0, 0, 0.03);
+}

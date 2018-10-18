@@ -1,10 +1,13 @@
 <div class="card card-container">
     <div class="card-body">
         <div class="informaition">
-            <h5 class="card-title inline-title col-8">{{productItem.name}}</h5>
+            <h5 class="card-title inline-title col-8">
+                {{productItem.name}}
+            </h5>
             <h6 class="card-subtitle mb-2 text-muted">Price: {{productItem.price | currency}}</h6>
             <p class="card-text" *ngIf="productItem.additionalInformation">{{productItem.additionalInformation}}</p>
             <p class="card-text" *ngIf="!productItem.isAvailable">Not available</p>
+            <a class="feedback-link" (click)="onShowDetails()">Feedback</a>
         </div>
         <button type="button" class="btn btn-dark add-button col-4"
                 [ngClass]="{'disabled': !productItem.isAvailable}"
